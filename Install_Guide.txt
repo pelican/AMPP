@@ -1,0 +1,51 @@
+*** Install Guide for AMPP ***
+
+Contents:
+	A. Installing
+		I) Pelican
+		II) AMPP
+	C. Generating Documentation
+
+*~*~*~*~*~*~*~*~*~*~*~*~*~*~*
+
+A. Installing
+	I) Pelican (github link)
+		- Enter the 'pelican' directory
+		- Make new directory 'build'
+		- Enter the 'build' directory
+		- In terminal, run the command:
+			cmake ../pelican -DCMAKE_BUILD_TYPE=release
+
+		- If Pelican fails to build. Use the synaptic package manager or the apt-get command to install the required packages until the build is successful.
+
+~~~~~~
+
+	II) AMPP (github link)
+		- Enter the 'AMPP' directory
+		- Make new directory 'build'
+		- Enter the 'build' directory
+		- In terminal run the command:
+			cmake ../src -DCMAKE_BUILD_TYPE=release
+
+		- If AMPP fails to build. Use the synaptic package manager or the apt-get command to install the required packages until the build is successful.
+
+*~*~*~*~*~*~*~*~*~*~*~*~*~*~*
+
+C. Generating Documentation
+
+The AMPP documentation is generated using Doxygen. This must be done after AMPP has been installed. 
+The creation of pdf files from latex also requires the installation of texlive.
+
+There are 3 parts to the documentation. The User Guide, API, and Developers Guide with a doxygen configuration file for each. DoxyfileUser, DoxyfileAPI and DoxyfileDeveloper respectively.
+
+Each document must be generated individually. 
+This is done (whilst inside the AMPP/build/ directory) by using the doxygen command on the relevant config file.
+eg. doxygen DoxyfileAPI
+
+This will automatically generate an html and latex version of the document which can be found in AMPP/build/doc/<doctype>
+Where <doctype> will be a directory named 'user', 'api' or 'developer' depending on the document generated.
+
+Within the document folder there will be two directories, html and latex. To open the html version of the document enter the html folder and open the file 'index.html' ((only for API??))
+
+The latex file requires another make command to generate the pdf. Whilst in the latex directory simply type 'make' into the terminal to generate the pdf. Which will be named 'refman.pdf'.
+
