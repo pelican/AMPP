@@ -1,0 +1,24 @@
+
+/**
+@anchor APIdoc
+@mainpage Introduction
+
+
+@section api_whatis What is AMPP?
+
+
+
+@defgroup c AMPP modules
+@defgroup c_plugins Instrument Plugins
+@ingroup c
+@defgroup c_modules Modules
+@ingroup c
+@defgroup c_datablobs Data Blobs
+@ingroup c
+@defgroup c_pipelines Pipelines
+@ingroup c
+@defgroup c_output Output Streamers
+@ingroup c
+
+*/
+
