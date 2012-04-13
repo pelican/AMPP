@@ -1,0 +1,62 @@
+/**
+
+@page servxml Server Options
+
+@section serv server.xml
+
+@verbatim
+        <connection host="127.0.0.1" port="4346"/>
+@endverbatim
+
+The port specified is that used for the UDP packets.
+
+@verbatim
+        <subbandsPerPacket value="61" />
+@endverbatim
+
+Gives a maximum value for the subbands in each UDP packet. This number is then split between the two streams.
+Usual values of 31, 61 or 62.
+
+@verbatim
+        <import file="/home/artemis/Pulsars/B0329+54/commonoptions.xml"/>
+@endverbatim
+
+Import file is used to point to the location of commonoptions.xml
+
+@verbatim
+        <Stream1 subbandStart="0" subbandEnd="30"/>
+        <Stream2 subbandStart="31" subbandEnd="60"/>
+@endverbatim
+
+Specifies how to split the subbands into stream 1 and stream 2. The maximum number split must match the number specified by subbandsPerPacket. 
+
+@verbatim
+        <data type="LofarTimeStream1" />
+        <data type="LofarTimeStream2" />
+@endverbatim
+
+The data type indicates the name of the stream. These must match the names that are hard coded into the client executables (whichones?) 
+
+@verbatim
+    <buffers>
+      <LofarTimeStream1>
+        <buffer maxSize="15000000000" maxChunkSize="1500000000"/>
+      </LofarTimeStream1>
+
+      <LofarTimeStream2>
+        <buffer maxSize="15000000000" maxChunkSize="1500000000"/>
+      </LofarTimeStream2>
+    </buffers>
+@endverbatim
+
+Specifies information for the buffers.
+
+maxSize indicates the maximum size for the ring buffer. Upon reaching this size it will begin to override previous data rather than continue to grow.
+
+maxChunkSize places a limitation on the size of data blobs.
+
+@latexonly
+@clearpage
+@endlatexonly
+
+*/

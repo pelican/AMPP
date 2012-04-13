@@ -1,0 +1,19 @@
+/**
+
+@page streamxml Pipeline Options
+
+@section stream 
+
+The stream1 and stream2 xml files are primarily used for configuration options for the modules that make up the pipeline. For a usual observation set up these options will not need to be changed. 
+
+However it should be ensured that all file imports point at the commonoptions.xml file so that it is available for use by the module.
+
+@verbatim
+ <import file="/home/artemis/Pulsars/B0329+54/mycommon.xml"/>
+@endverbatim
+
+@latexonly
+@clearpage
+@endlatexonly
+
+*/

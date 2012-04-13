@@ -1,0 +1,50 @@
+/**
+
+@page observe Observing
+
+@section obs Starting an Observation
+
+To begin the LOFAR observation session each of the following commands should be run in a separate window. (?can't find stream exe files in pel-lofar?)
+
+@verbatim
+start servermain --config server.xml
+
+start udpbfpipeline1 --config stream1.xml
+
+start udpbfpipeline2 --config stream2.xml
+@endverbatim
+
+>>Schedtool<<
+It is possible to assign each of these executable files to run on specific ARTEMIS cores using schedtool. The following command is used to achieve this:
+
+@verbatim
+schedtool -a 0,1,2,3,4,5 -e udpbfpipeline1 --config=steam1.xml
+@endverbatim
+
+This will cause pipeline 1 to use cores 0,1,2,3,4,5. The command would then be run again using pipeline 2 and cores 6,7,8,9,10.
+
+***What is total no of cores available?***
+
+The server itself can be run on a single core effectively. However this should be the same core that the ethernet port is using. To locate this core the command
+
+@verbatim
+cat /proc/interrupts
+@endverbatim
+
+should be used. This can then be assigned to the serverMain executable using schedtool.
+
+@subsection obstime Observation Time Limits
+
+To limit observation times there are currently two methods:
+
+1. Set the number of iterations in the pipeline (UdpBFPipeline.cpp)
+
+2. Use of kron, a unix tool for scheduling tasks.
+
+Option 2 is more practical for chosing time periods for observation.
+
+@latexonly
+@clearpage
+@endlatexonly
+
+*/

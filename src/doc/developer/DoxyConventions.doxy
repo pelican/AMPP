@@ -1,0 +1,66 @@
+/**
+
+@page doxcon Doxygen Conventions
+
+@section doxconv Doxygen Conventions
+The following are the conventions used for doxygen commenting in the module files. This is used to generate the API documentation.
+
+A full doxygen manual can be found at http://www.stack.nl/~dimitri/doxygen/
+
+@section mod Modules
+Basic doxygen comments about a module should be placed in the relevant header file. If more detail is required about the specific use of the function within the module C++ code, this should be placed within the .cpp file.
+(For example see: RFI_Clipper.h and RFI_Clipper.cpp)
+
+@subsection header Module Header Files
+
+After includes tag for doxygen to include the file
+@verbatim
+/**
+ * @file example.h
+ */
+@endverbatim
+
+After declaration of namespaces place description of class/module
+
+@verbatim
+/**
+ * @class Example
+ *
+ * @brief Brief one line description of example class/module
+ *
+ * @details If required more detail about class/module
+ *
+ */
+@endverbatim
+
+Constructor and destructor should be tagged with triple forward slash.
+
+@verbatim
+	/// Constructor
+	Example(const ConfigNode& config);
+
+	/// Destructor
+	~Example();
+@endverbatim
+
+A brief description for each function may be entered in this way if desired. But any detailed description should be placed within the .cpp file.
+
+@subsection module Module .cpp Files
+
+If additional information about the use of a function within the module is required, then include the following block of text before the function within the code.
+
+@verbatim
+/**
+ * @details some more details about the following function
+ *
+ */
+
+void functionyfunction
+@endverbatim
+
+@latexonly
+@clearpage
+@andlatexonly
+
+*/
+

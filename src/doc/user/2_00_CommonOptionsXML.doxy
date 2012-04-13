@@ -1,0 +1,46 @@
+/**
+
+@page commonxml Common Options
+
+@section common commonoptions.xml
+
+@verbatim
+	<samplesPerPacket value="16" />
+    <nRawPolarisations value="2" />
+    <dataBitSize value="16" />
+    <totalComplexSubbands value="512" />
+@endverbatim
+
+These options do not change for LOFAR and should be left in this configuration.
+
+@verbatim
+    <clock value="200" />
+@endverbatim
+
+Clock value for analogue and digital samplers. May also be set to 160 for LOFAR.
+
+@verbatim
+    <outputChannelsPerSubband value="16" />
+@endverbatim
+
+The channels per subband for the polyphase filter.
+
+@verbatim
+    <udpPacketsPerIteration value="64" />
+@endverbatim
+
+Defines the size of block processed in one go. This is usually set at 64 or 128 as the pipeline processing is most efficient at these values.
+
+Each UDP packet has 16 time samples. To have n channels in the polyphase filter, there must also be n time samples. This time is then used to create the frequency channels.
+
+@verbatim
+    <integrateTimeBins value="16" />
+@endverbatim
+
+Value for further integration of UDP packets if required.
+
+@latexonly
+@clearpage
+@endlatexonly
+
+*/

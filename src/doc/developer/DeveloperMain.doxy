@@ -1,14 +1,20 @@
 /**
 
-@mainpage Pelican Developer Guide
+@page devguide Developer Guide
 
 @section intro Introduction
+This guide provides a reference to the coding conventions used within the AMPP coding.
 
-This document provides a developer guide for Pelican.
+@li @ref doxcon
 
-@li @subpage developer_codeConventions
-@li @subpage developer_build
-@li @subpage developer_regressionTesting
-@li @subpage dev_server
+@latexonly
+@clearpage
+@endlatexonly
 
 */
+
+	
+
+
+
+
